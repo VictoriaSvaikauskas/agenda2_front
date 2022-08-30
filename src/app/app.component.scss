@@ -1,0 +1,95 @@
+
+
+// #container{
+//     background-color: #B9AC8B;
+//     height: 100vh;
+// }
+
+
+// h1{
+//     color: #000000;
+//     font-family:'Times New Roman', Times, serif;
+//     background-color: #B9AC8B;
+//     font-size: 300%;
+// }
+
+
+// #username{
+//     display: flex;
+//     background-color: #FFFFFF;
+//     width: 345px;
+//     height: 68px;
+// }
+
+// #log_in{
+//     background-color: #937575;
+//     width: 345px;
+//     height: 68px;
+
+// }
+
+
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background-color:#B9AC8B;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+h1{
+    margin:0;
+}
+
+.loginbox p {
+    margin:0;
+    padding:0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width:100%;
+    margin-bottom: 20px;
+
+}
+
+// .loginbox input[type = "text"],input[type = "password"]{
+//     border:none;
+//     border-bottom:1px solid #937575;
+//     background: #fff;
+//     outline:none;
+//     height: 40px;
+//     color: #fff;
+//     font-size: 16px;
+// }
+
+.loginbox input[type= "submit"]{
+    border:none;
+    outline:none;
+    height: 40px;
+    background: #937575;
+    color:#fff
+}
+
+.loginbox input[type= "submit"]:hover{
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+}
+
+.loginbox a {
+    text-decoration:none;
+    font-size:14px;
+    line-height: 20px;
+    color:#fff;
+}
+
+.loginbox a:hover{
+    color:#fff
+}
+

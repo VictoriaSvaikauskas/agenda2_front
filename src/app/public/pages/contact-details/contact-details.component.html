@@ -1,0 +1,22 @@
+<form (ngSubmit)="save()">
+    <app-editable-input
+    [fieldLabel]="'First Name'"
+    [fieldName]="'firstName'"
+    [content]="contact.name!"
+    [edit]="editMode"
+    ></app-editable-input>
+    <app-editable-input
+    [fieldLabel]="'Last Name'"
+    [fieldName]="'lastName'"
+    [content]="contact.company?.name!"
+    [edit]="editMode"
+    ></app-editable-input>
+    <app-editable-input
+    [fieldLabel]="'Phone number'"
+    [fieldName]="'telephone'"
+    [content]="contact.phone!"
+    [edit]="editMode"
+    ></app-editable-input>
+
+  
+</form>

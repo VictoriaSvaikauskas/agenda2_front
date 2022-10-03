@@ -1,0 +1,35 @@
+@use "./../../../../assets/styles/variables.scss";
+
+#telephoneNumber{
+    font-size: large;
+    font-weight: bold;
+    
+}
+
+#name{
+    font-size: large;
+    
+}
+
+#container{
+  background-color:#B9AC8B;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    transition: 40ms ease-in-out;
+    cursor: pointer;
+    &:hover{
+      background-color: variables.$color-primary-light;
+    }
+}
+
+#right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-color:#B9AC8B;
+    #wp{
+      height: 30px;
+    }
+}

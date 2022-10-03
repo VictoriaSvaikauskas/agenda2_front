@@ -1,0 +1,12 @@
+<header>
+  <button [routerLink]="['/login']">LOGIN (BORRAR DESPUES)</button>
+  <button [routerLink]="['/contacts/new']" class="roundButton" id="addContact">+</button>
+</header>
+
+<main id="container">
+  <app-contact-card
+    *ngFor="let contact of contactsData"
+    [contact]="contact"
+    >
+  </app-contact-card>
+</main>

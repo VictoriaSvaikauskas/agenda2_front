@@ -1,6 +1,7 @@
 @use './../../../../assets/styles/variables.scss';
 @use './../../../../assets/styles/buttons.scss';
 
+
 #container{
   @include variables.limit-container;
 }
@@ -19,3 +20,5 @@ main{
   overflow-y: auto;
   height: calc(100vh - 50px);
 }
+
+

@@ -17,3 +17,4 @@ import { ContactCardComponent } from '../../components/contact-card/contact-card
   ]
 })
 export class ContactsModule { }
+

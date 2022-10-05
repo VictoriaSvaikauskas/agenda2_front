@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactsComponent } from './contacts.component';
 
 const routes: Routes = [{
-  path: 'contactsfake',
+  path: '',
   component: ContactsComponent
 }];
 

@@ -1,14 +1,11 @@
-<header> 
-<button [routerLink]="['/contacts/new']"  id="addContact">AddContact</button>
+<header>
+  <button [routerLink]="['/contacts/new']"  id="addContact">addContact</button>
 </header>
+
 <main id="container">
-  
   <app-contact-card
     *ngFor="let contact of contactsData"
     [contact]="contact"
-
     >
   </app-contact-card>
 </main>
-
-

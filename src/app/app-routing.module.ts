@@ -5,12 +5,12 @@ import { LoggedUserGuard } from './core/guards/logged-user.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: ()=> import('./public/pages/contacts/contacts.module').then(m => m.ContactsModule),
-    canActivate: [LoggedUserGuard]
+    loadChildren:  ()=> import('./public/pages/login/login.module').then(m => m.LoginModule) 
   },
   {
-    path: 'login',
-    loadChildren: ()=> import('./public/pages/login/login.module').then(m => m.LoginModule)
+    path: 'contactsfake',
+    loadChildren: ()=> import('./public/pages/contacts/contacts.module').then(m => m.ContactsModule),
+    canActivate: [LoggedUserGuard]
   },
   {
     path: 'contacts',

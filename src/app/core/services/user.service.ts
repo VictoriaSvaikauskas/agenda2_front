@@ -41,4 +41,17 @@ export class UserService {
     });
     return await res.json();
   }
+  
+  async DeleteContact(contact: ContactJsonPlaceholder) {
+    console.log('Enviando edit de usuario a la api');
+    const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+      method: 'Del',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(contact),
+    });
+    return await res.json();
+  }
+  
 }

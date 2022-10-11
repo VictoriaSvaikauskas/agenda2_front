@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren:  ()=> import('./public/pages/login/login.module').then(m => m.LoginModule) 
   },
   {
+    path: 'Sign_up',
+    loadChildren:  ()=> import('./public/pages/signup/signup.module').then(m => m.SignupModule) 
+  },
+  {
     path: 'contactsfake',
     loadChildren: ()=> import('./public/pages/contacts/contacts.module').then(m => m.ContactsModule),
     canActivate: [LoggedUserGuard]

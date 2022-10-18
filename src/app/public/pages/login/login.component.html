@@ -6,17 +6,32 @@
 
         <div class="loginbox">
         <h1>LOG IN</h1>
+        <form (ngSubmit)="login(form)" #form="ngForm">
         <form action="">
-          <p>Username</p>
-          <input type="text" placeholder="Username">
-          <p>Password</p>
-          <input type="password" placeholder="Password">
-          <input type="submit" value="Login">
-          <a href="#">Lost your password?</a><br>
-          <a href="#">Don't have an account?</a>
-          <a [routerLink]= "['Sign_up']" > Sign up</a>
+          <div class="inputs">
+            <label for="username">Username</label>
+          <!-- <p>Username</p> -->
+          <input type="text" name="username" id="username" autocomplete="username" placeholder="username"
+          [(ngModel)]="authData.userName" [required]="true" #username="ngModel" 
+          >
+          </div>
+          <div class="inputs">
+            <label for="password">Password</label>
+          <!-- <p>Password</p> -->
+          <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Password"
+          [(ngModel)]="authData.password" [required]="true" [minlength]="6" #password="ngModel"
+        >
+      </div>
+      <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
+      <div>
+        <!-- <button type="submit">Log In</button> -->
+        <button type="submit" [disabled]="!form.valid">Log In</button>
+        <!-- <a href="#">Lost your password?</a><br> -->
+        <a>Don't have an account?</a>
+        <button type="button" [routerLink]="['Sign_up']">Sign Up</button>
+      </div>
         </form>
+      </form>
         </div>
-        
         </body>
 </p>

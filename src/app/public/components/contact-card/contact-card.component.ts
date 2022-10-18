@@ -14,5 +14,17 @@ export class ContactCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  Delete(){
+    console.log("Delete")
+  }
 }
+ 
+
+      
+    
+
+ 
+
+
+

@@ -1,26 +1,29 @@
 import { Injectable } from '@angular/core';
+import { BACKEND_URL } from '../constants/backend';
 import { ContactJsonPlaceholder } from '../interfaces/contacts';
+import { AuthService } from './auth.service';
+
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
-  constructor() {}
+export class ContactService {
+  constructor(private auth:AuthService) {}
 
-  async getUserDetails(id: number): Promise<ContactJsonPlaceholder> {
-    const jsonData = await this.getUsers();
-    const user = jsonData.filter((user) => user.id == id);
-    return user.length > 0 ? user[0] : {};
+  async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
+    const jsonData = await this.getContacts();
+    const contact = jsonData.filter((contact) => contact.id == id);
+    return contact.length > 0 ? contact[0] : {};
   }
 
-  async getUsers(): Promise<ContactJsonPlaceholder[]> {
+  async getContacts(): Promise<ContactJsonPlaceholder[]> {
     const data = await fetch('https://jsonplaceholder.typicode.com/users');
     return await data.json();
   }
 
   async editContact(contact: ContactJsonPlaceholder) {
     console.log('Enviando edit de usuario a la api');
-    const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+    const res = await fetch(BACKEND_URL+'/api/Contact', {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
@@ -32,7 +35,7 @@ export class UserService {
 
   async addContact(contact: ContactJsonPlaceholder){
     console.log('Enviando edit de usuario a la api');
-    const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+    const res = await fetch(BACKEND_URL+'/api/Contact', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -41,17 +44,15 @@ export class UserService {
     });
     return await res.json();
   }
-  
-  async DeleteContact(contact: ContactJsonPlaceholder) {
-    console.log('Enviando edit de usuario a la api');
-    const res = await fetch('https://jsonplaceholder.typicode.com/users', {
-      method: 'Del',
+
+  async deleteContact(id:number):Promise<boolean>{
+    const res = await fetch(BACKEND_URL+'/api/Contact'+id, {
+      method: 'POST',
       headers: {
         'Content-type': 'application/json',
+        'Authentication' : this.auth.getSession().token!
       },
-      body: JSON.stringify(contact),
     });
-    return await res.json();
+    return res.ok;
   }
-  
 }

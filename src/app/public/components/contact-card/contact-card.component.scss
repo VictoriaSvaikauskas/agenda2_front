@@ -12,8 +12,8 @@
 }
 
 #container{
-  background-color:#B9AC8B;
-    border: 1px solid gray;
+  background-color: rgb(255, 255, 255);
+    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     transition: 40ms ease-in-out;
@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    background-color:#B9AC8B;
+    background-color:rgb(255, 255, 255);
     #wp{
       height: 30px;
     }
